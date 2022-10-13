@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+#define A 500
+#define B 1000
+
+int scoreAB(int *X, int *Y){
+         int x=*X;
+        // cout<<"x"<<x<<endl;
+         int y= *Y + *X;
+         //cout<<y<<endl;
+         int pblmA, pblmB, totalA;
+         pblmA=(A-x*2);
+         //cout<<pblmA<<endl;
+         pblmB=(B-y*4);
+         //cout<<pblmB<<endl;
+         totalA= pblmA+pblmB;
+        //  cout<<"ta:"<<totalA<<endl;
+         return totalA;
+}        
+
+
+int scoreBA(int *X, int *Y){
+         int x=*X;
+        // cout<<"x"<<x<<endl;
+         int y= *Y + *X;
+         //cout<<y<<endl;
+         int pblmA, pblmB, totalB;
+         pblmA=(B-x*4);
+         //cout<<pblmA<<endl;
+         pblmB=(A-y*2);
+        // cout<<pblmB<<endl;
+         totalB= pblmA+pblmB;
+        //cout<<"tb:"<<totalB<<endl;
+         return totalB;
+}
+
+int main() {
+	int T,totalA,totalB;
+	cin>>T;
+	while(T--){
+	    int X,Y;
+	    cin>>X>>Y;
+	 // cout<<"z:"<< scoreAB(&X,&Y)<<endl;
+	  //  scoreBA(&Y,&X);
+	  //  cout<<"z1:"<< scoreBA(&Y,&X)<<endl;
+	    if(scoreAB(&X,&Y) >= scoreBA(&Y,&X))
+	    { cout<<scoreAB(&X,&Y)<<endl;
+	        
+	    }else{
+	        cout<<scoreBA(&Y,&X);
+	    }
+	    }
+	return 0;
+}
